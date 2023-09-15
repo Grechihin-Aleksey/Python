@@ -14,15 +14,12 @@ berries = list(random.randint(0, 10) for i in range(quantity_num))
 result = []
 i = 0
 sum = 0
-while (i < quantity_num):
-    if (i == quantity_num - 1):
-        sum = berries[i] + berries[i - 1] + berries[0]
-        print(sum)
-    else:
-        sum = berries[i] + berries[i - 1] + berries[i + 1]
-        result.append(sum)
-        result.sort()
-        print(sum)
-    i += 1
-print(berries)
+sum_1 = 0
+for i in range(len(berries)):
+    sum = berries[i - 1] + berries[i] + berries[i - quantity_num + 1]
+    print(berries[i], end= " ")
+    # print()
+    result.append(sum)
+sorted(result)
+print(result)
 print(f"максимальное число ягод,собранных за один заход {result[-1]}")
