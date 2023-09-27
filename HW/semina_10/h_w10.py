@@ -21,8 +21,8 @@ random.shuffle(lst)
 data = pd.DataFrame({'whoAmI': lst})
 data.head()
 
-data.loc[data['whoAmI'] == 'robot', 'robot'] = True
-data.loc[data['whoAmI'] != 'robot', 'robot'] = False
-data.loc[data['whoAmI'] == 'human', 'human'] = True
-data.loc[data['whoAmI'] != 'human', 'human'] = False
+data.loc[data['whoAmI'] == 'robot', 'robot'] = int(1)
+data.loc[data['whoAmI'] != 'robot', 'robot'] = int(0)
+data.loc[data['whoAmI'] == 'human', 'human'] = int(1)
+data.loc[data['whoAmI'] != 'human', 'human'] = int(0)
 data[['robot', 'human']]
